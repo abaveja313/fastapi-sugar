@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi_sugar"
+version = "0.0.1"
+description = "FastAPI Syntactic Sugar and Utilities"
+readme = "README.rst"
+authors = [
+  {name = "Amrit Baveja", email = "abaveja313@gmail.com"}
+]
+maintainers = [
+  {name = "Amrit Baveja", email = "abaveja313@gmail.com"}
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+  
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/abaveja313/fastapi_sugar/issues"
+changelog = "https://github.com/abaveja313/fastapi_sugar/blob/master/changelog.md"
+homepage = "https://github.com/abaveja313/fastapi_sugar"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
